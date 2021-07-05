@@ -18,42 +18,22 @@
 
 
   <script>
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => response.json())
+    .then(json => userDisplay (json))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // fetch('https://jsonplaceholder.typicode.com/users')
-    // .then(response => response.json())
-    // .then(json => userDisplay (json))
-
-    // function userDisplay (users) {
+    function userDisplay (users) {
         
-    //     const userNames = users.map(user => user.name)
-    //     const ul = document.getElementById("users-container");
+        const userNames = users.map(user => user.name)
+        const ul = document.getElementById("users-container");
 
-    //     for (let i = 0; i < userNames.length; i++) {
-    //         const user = userNames[i];
-    //         const li = document.createElement("li") ;       // console.log(user);
-    //         li.innerText = user;
-    //         ul.appendChild(li);
-    //   }
-    // };
+        for (let i = 0; i < userNames.length; i++) {
+            const user = userNames[i];
+            const li = document.createElement("li") ;       // console.log(user);
+            li.innerText = user;
+            ul.appendChild(li);
+      }
+    };
 
    
 
